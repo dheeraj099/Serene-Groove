@@ -13,18 +13,10 @@ const dummyImages = [
   "https://plus.unsplash.com/premium_photo-1661317306727-64c7a1339a6c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1560184897-67f4a3f9a7fa?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ];
-
-export default function VillasPage({ params }: { params: { villas: string } }) {
-  // console.log("villadetails::",villaId)
-  // console.log("params::",params.value)
-  console.log("params::",params)
+export default function VillaDetails({ params }: { params: { villas: string } }) {
   const villaName = decodeURIComponent(params.villas);
-  console.log("villaName::",params.villas)
   const [isReady, setIsReady] = useState(false);
-  console.log("villaName::",villaName)
   const villaData = villasData.find(villa => villa.villa === villaName);
-  console.log("villaData::",villaData)
-  // const [villaData, setVillaData] = useState(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ target: scrollRef, offset:['start', 'end'] });
   const parallaxY = useTransform(
@@ -47,14 +39,12 @@ export default function VillasPage({ params }: { params: { villas: string } }) {
   });
   return (
     <>
-      {/* Fixed Header */}
       <div className="top-0 left-0 w-full z-50 bg-white fixed ">
         <Header />
       </div>
 
-      {/* Main Scroll Container, with top padding equal to header height */}
       <div
-        className="min-h-[600vh] w-full sticky  " // pt-16 if header is h-16 (64px)
+        className="min-h-[600vh] w-full sticky  " 
         ref={scrollRef}
       >
         <div className="grid grid-cols-[25%_50%_25%] gap-8 w-full items-start px-12   sticky top-0">
@@ -85,7 +75,7 @@ export default function VillasPage({ params }: { params: { villas: string } }) {
             )}
           </div>
 
-          {/* Right Column - Booking Info (unchanged) */}
+          {/* Right Column - Booking Info  */}
           <div className="sticky top-12 self-start h-full max-h-screen max-w-[93%] flex justify-center flex-col pt-[130px]">
             <div>
               <div className="flex items-center justify-between text-sm text-gray-700 w-fit ">
