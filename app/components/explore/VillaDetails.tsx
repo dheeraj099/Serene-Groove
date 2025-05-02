@@ -29,10 +29,13 @@ export default function VillaDetails({ params }: { params: { villas: string } })
     if (scrollRef.current) {
       scrollRef.current.scrollTo(0, 0);
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({top:0, behavior:'smooth'});
     setIsReady(true);
   }, []);
 
+  useEffect(()=>{
+    window.scrollTo({top:0})
+  },[])
   const smoothParallaxY = useSpring(parallaxY, {
     stiffness: 80,
     damping: 40,
