@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-32 mb-12">
+    <div className="flex flex-col items-center justify-center mt-20 mb-20 lg:mt-32 lg:mb-12">
       <div className="flex bg-[#2350274D] rounded-3xl py-2 px-6 items-center gap-2">
         <span className="text-sm text-text">Come stay with us</span>
         <svg
@@ -18,13 +18,12 @@ const Footer = () => {
           />
         </svg>
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <span className="text-6xl font-extrabold leading-[80px] text-text">
-          Come Stay at Serene groove{" "}
+      <div className="flex flex-col items-center justify-center mt-2 lg:mt-0">
+        <span className="text-xl lg:text-6xl font-extrabold lg:leading-[80px] leading-5 text-text">
+          Come Stay at Serene groove
         </span>
-        <span className="text-6xl font-extrabold text-text leading-[80px]">
-          {" "}
-          Get Ready for your Wayanad escape{" "}
+        <span className="text-xl lg:text-6xl font-extrabold text-text lg:leading-[80px] leading-5">          
+          Get Ready for your Wayanad escape
         </span>
         <span className="mt-4 text-sm leading-6 text-text">
           Book your villa today and step into nature’s embrace.
@@ -33,7 +32,7 @@ const Footer = () => {
           Call us at : +91 9495482212
         </span>
       </div>
-      <div className="flex items-center p-2 border rounded border-accent w-[30%] justify-between mt-6">
+      <div className="flex items-center p-2 border rounded border-accent w-[80%] lg:w-[30%] justify-between mt-6">
         <span className="text-sm text-text">serenegroove@gmail.com</span>
         <button className="flex items-center gap-2 px-1 py-3 text-sm text-white rounded bg-accent">
           Contact Us

@@ -22,7 +22,7 @@ export default function VillaDetails({ params }: { params: { villas: string } })
   const parallaxY = useTransform(
     scrollYProgress,
     [0, 1],
-    ["0vh", `-${(dummyImages.length - 1) * 105.85}vh`] // 40vh per image for parallax
+    ["0vh", `-${(dummyImages.length - 1) * 80.85}vh`] // 40vh per image for parallax
   );
 
   useLayoutEffect(() => {
@@ -47,39 +47,57 @@ export default function VillaDetails({ params }: { params: { villas: string } })
       </div>
 
       <div
-        className="min-h-[600vh] w-full sticky  " 
+        className="lg:min-h-[600vh] w-full lg:sticky flex flex-col  " 
         ref={scrollRef}
       >
-        <div className="grid grid-cols-[25%_50%_25%] gap-8 w-full items-start px-12   sticky top-0">
+        <div className="lg:grid lg:grid-cols-[25%_50%_25%] gap-8 w-full items-start px-12   lg:sticky top-0">
           {/* Left Column - Product Info */}
-          <div className="sticky top-16 self-start h-full max-h-screen flex justify-center flex-col pt-[130px]">
+          <div className="lg:sticky top-16 self-start h-full max-h-screen flex justify-center flex-col pt-20 lg:pt-[130px]">
             <h2 className="text-4xl font-extrabold text-text">{villaName}</h2>
             <span className="text-sm text-text font-semibold">
               {villaData?.capacity}
             </span>
-            <p className="text-text text-lg mt-4">
+            <p className="text-text text-xs lg:text-lg mt-4">
             {villaData?.description}
               
             </p>
           </div>
 
           {/* Center Column - Vertical Image Carousel */}
-          <div className="sticky top-0 h-screen overflow-hidden  ">
+          <div className="hidden lg:block lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden  ">
             {isReady && (<motion.div style={{ y: smoothParallaxY }}   initial={false}  className="flex flex-col gap-2 py-[130px]  ">
               {dummyImages.map((src, idx) => (
                 <img
                   key={idx}
                   src={`${src}?auto=format&fit=crop&w=800&q=80`}
                   alt={`villa-${idx}`}
-                  className="h-screen w-full object-cover rounded-3xl"
+                  
+                  className=" h-[550px] w-full object-cover rounded-3xl"
                 />
               ))}
             </motion.div>
             )}
           </div>
 
+          <div className=" lg:hidden ">
+            {isReady && (<div   className="flex flex-col gap-2 mt-8  ">
+              {dummyImages.map((src, idx) => (
+                <img
+                  key={idx}
+                  src={`${src}?auto=format&fit=crop&w=800&q=80`}
+                  alt={`villa-${idx}`}
+                  
+                  className=" h-[300px] w-full object-cover rounded-3xl"
+                />
+              ))}
+            </div>
+            )}
+          </div>
+          
+          
+
           {/* Right Column - Booking Info  */}
-          <div className="sticky top-12 self-start h-full max-h-screen max-w-[93%] flex justify-center flex-col pt-[130px]">
+          <div className="sticky top-12 self-start h-full max-h-screen max-w-[93%] flex justify-center flex-col pt-8 lg:pt-[130px]">
             <div>
               <div className="flex items-center justify-between text-sm text-gray-700 w-fit ">
                 <span className="text-4xl font-extrabold text-text">
@@ -101,12 +119,12 @@ export default function VillaDetails({ params }: { params: { villas: string } })
                     Your Stay Duration
                   </span>
                   <div className="flex gap-2">
-                    <div className="flex py-4 px-6 rounded-sm border border-[#E4E4E4]">
+                    <div className="flex lg:py-4 lg:px-6 px-4 py-2 rounded-sm border border-[#E4E4E4] items-center">
                       <span className="text-sm text-[#49454F]">
                         21 April 25 to 26 April 25
                       </span>
                     </div>
-                    <div className="flex py-4 px-6 rounded-sm border border-[#E4E4E4] items-center">
+                    <div className="flex py-4 lg:px-6 px-7 rounded-sm border border-[#E4E4E4] items-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="18"
@@ -128,17 +146,17 @@ export default function VillaDetails({ params }: { params: { villas: string } })
                   Total Guests
                   </span>
                   <div className="flex gap-2">
-                    <div className="flex py-4 px-6 rounded-sm border border-[#E4E4E4]">
+                    <div className="flex py-4 lg:px-6 px-9 rounded-sm border border-[#E4E4E4]">
                       <span className="text-sm text-[#49454F]">
                         -
                       </span>
                     </div>
-                    <div className="flex py-4 px-6 rounded-sm border border-[#E4E4E4]">
+                    <div className="flex py-4 lg:px-6 px-9 rounded-sm border border-[#E4E4E4]">
                       <span className="text-sm text-[#49454F]">
                         04
                       </span>
                     </div>
-                    <div className="flex py-4 px-6 rounded-sm border border-[#E4E4E4]">
+                    <div className="flex py-4 lg:px-6 px-9 rounded-sm border border-[#E4E4E4]">
                       <span className="text-sm text-[#49454F]">
                         +
                       </span>

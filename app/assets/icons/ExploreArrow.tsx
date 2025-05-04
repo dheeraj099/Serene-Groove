@@ -4,7 +4,7 @@ const ExploreArrow = () => {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-11 h-11 lg:w-6 lg:h-6" // 44px default, 24px on lg
+    className="w-2.5 h-2.5 lg:w-6 lg:h-6" // 44px default, 24px on lg
     viewBox="0 0 22 22"
     fill="none"
   >
